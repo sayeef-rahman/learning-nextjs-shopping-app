@@ -15,11 +15,16 @@ const HomePage = (props) => {
     <div>
       <div>
         <h1 style={{ textAlign: "center" }}>The Home Page</h1>
-        <div style={{display:"flex", justifyContent: "center"}}>
-          <button onClick={handleViewClients} style={{ padding: "10px 10px", marginRight: "15px" }}>View Clients</button>
-          <button style={{ padding: "10px 10px" }}>
-            <Link href={"/blogs"}>View Blogs</Link>
+        <div style={{ display: "flex", justifyContent: "center" }}>
+          <button
+            onClick={handleViewClients}
+            style={{ padding: "10px 10px", marginRight: "15px" }}
+          >
+            View Clients
           </button>
+          <Link href={"/blogs"}>
+            <button style={{ padding: "10px 10px" }}>View Blogs</button>
+          </Link>
         </div>
       </div>
       <div>

@@ -4,15 +4,15 @@ const BlogsPage = (props) => {
   const { blogs } = props;
   return (
     <>
-    <h1 style={{textAlign: 'center'}}>All Blogs</h1>
+      <h1 style={{ textAlign: "center" }}>All Blogs</h1>
       {blogs.slice(0, 5).map((blog) => {
         return (
           <div key={blog.id}>
             <h4>Title: {blog.title}</h4>
             <h4>Blog ID: {blog.id}</h4>
-            <button>
-              <Link href={"/blogs/" + blog.id}>Blog Details</Link>
-            </button>
+            <Link href={"/blogs/" + blog.id}>
+              <button style={{padding:"10px 10px"}}>Blog Details</button>
+            </Link>
           </div>
         );
       })}
