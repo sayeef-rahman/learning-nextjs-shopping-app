@@ -2,11 +2,10 @@ import { useRouter } from "next/router";
 import { useState } from "react";
 import fs from "fs/promises";
 import path from "path";
+import Link from "next/link";
 
 const HomePage = (props) => {
-  const [data, setData] = useState([]);
   const { products } = props;
-  console.log(products);
   const router = useRouter();
   const handleViewClients = () => {
     router.push("/clients");
@@ -16,6 +15,9 @@ const HomePage = (props) => {
       <div>
         <h1>The Home Page</h1>
         <button onClick={handleViewClients}>View Clients</button>
+        <button style={{margin:"0px 10px"}}>
+          <Link href={"/blogs"}>Blogs</Link>
+        </button>
       </div>
       <div>
         <h1>Products</h1>
