@@ -10,14 +10,17 @@ const HomePage = (props) => {
   const handleViewClients = () => {
     router.push("/clients");
   };
+
   return (
     <div>
       <div>
-        <h1>The Home Page</h1>
-        <button onClick={handleViewClients}>View Clients</button>
-        <button style={{margin:"0px 10px"}}>
-          <Link href={"/blogs"}>Blogs</Link>
-        </button>
+        <h1 style={{ textAlign: "center" }}>The Home Page</h1>
+        <div style={{display:"flex", justifyContent: "center"}}>
+          <button onClick={handleViewClients} style={{ padding: "10px 10px", marginRight: "15px" }}>View Clients</button>
+          <button style={{ padding: "10px 10px" }}>
+            <Link href={"/blogs"}>View Blogs</Link>
+          </button>
+        </div>
       </div>
       <div>
         <h1>Products</h1>
@@ -54,10 +57,10 @@ export async function getStaticProps() {
   const products = JSON.parse(jsonData);
 
   return {
-    props:{
-      products
-    }
-  }
+    props: {
+      products,
+    },
+  };
 }
 
 // get static data from api with getStaticProps()
@@ -79,7 +82,6 @@ export async function getStaticProps() {
 //     },
 //   };
 // }
-
 
 // get data from serverSide
 

@@ -6,7 +6,7 @@ const BlogPostPage = () => {
     console.log("catch all route: ",router.query.blogs);
     return (
         <div>
-            <h1>The Blog Page</h1>
+            <h1>The Blog Page </h1>
         </div>
     );
 };

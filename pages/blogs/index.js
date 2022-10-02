@@ -4,6 +4,7 @@ const BlogsPage = (props) => {
   const { blogs } = props;
   return (
     <>
+    <h1 style={{textAlign: 'center'}}>All Blogs</h1>
       {blogs.slice(0, 5).map((blog) => {
         return (
           <div key={blog.id}>
