@@ -23,7 +23,10 @@ const HomePage = (props) => {
             View Clients
           </button>
           <Link href={"/blogs"}>
-            <button style={{ padding: "10px 10px" }}>View Blogs</button>
+            <button style={{ padding: "10px 10px", marginRight:"15px" }}>View Blogs</button>
+          </Link>
+          <Link href={"/users"}>
+            <button style={{ padding: "10px 10px" }}>View Users</button>
           </Link>
         </div>
       </div>
