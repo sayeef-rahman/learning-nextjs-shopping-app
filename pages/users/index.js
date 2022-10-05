@@ -1,5 +1,4 @@
 import Link from "next/link";
-import React, { useEffect, useState } from "react";
 import useSWR from "swr";
 
 const fetcher = (url) =>
@@ -22,7 +21,6 @@ const AllUsers = () => {
   } else if (!data) {
     return "Loading...";
   }
-  console.log(data);
   return (
     <>
       <div className="text-center container">

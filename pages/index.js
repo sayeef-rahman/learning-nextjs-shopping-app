@@ -3,6 +3,7 @@ import { useState } from "react";
 import fs from "fs/promises";
 import path from "path";
 import Link from "next/link";
+import Image from "next/image";
 
 const HomePage = (props) => {
   const { products } = props;
@@ -14,27 +15,46 @@ const HomePage = (props) => {
   return (
     <div>
       <div>
-        <h1 style={{ textAlign: "center" }}>The Home Page</h1>
-        <div style={{ display: "flex", justifyContent: "center" }}>
-          <button
-            onClick={handleViewClients}
-            style={{ padding: "10px 10px", marginRight: "15px" }}
-          >
+        <h1 className="text-center my-3">The Home Page</h1>
+        <div className="d-flex justify-content-center mt-4">
+          <button onClick={handleViewClients} className="btn btn-primary me-2">
             View Clients
           </button>
           <Link href={"/blogs"}>
-            <button style={{ padding: "10px 10px", marginRight:"15px" }}>View Blogs</button>
+            <button className="btn btn-primary me-2 fw-bold">View Blogs</button>
           </Link>
-          <Link href={"/users"}>
-            <button style={{ padding: "10px 10px" }}>View Users</button>
+          <Link href={"/users"} className="m-2">
+            <button className="btn btn-primary">View Users</button>
           </Link>
         </div>
       </div>
-      <div>
+      <div className="container my-3">
         <h1>Products</h1>
-        <div>
+        <div className="row">
           {products?.map((product) => {
-            return <h1 key={product.id}>{product.title}</h1>;
+            const productImage = product.images[0];
+            console.log("productImage: ", productImage);
+            return (
+              <div
+                className="card col-2 m-3"
+                style={{ width: "18rem" }}
+                key={product.id}
+              >
+                {/* <Image src={productImage} className="card-img-top" alt="product image" width={500}
+        height={500} /> */}
+                <img
+                  src={productImage}
+                  className="card-img-top mt-2"
+                  alt="product image"
+                />
+                <div className="card-body">
+                  <p className="card-text">
+                    Some quick example text to build on the card title and make
+                    up the bulk of the card's content.
+                  </p>
+                </div>
+              </div>
+            );
           })}
         </div>
       </div>

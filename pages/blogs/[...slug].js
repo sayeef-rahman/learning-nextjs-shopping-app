@@ -3,7 +3,7 @@ import React from 'react';
 
 const BlogPostPage = () => {
     const router = useRouter();
-    console.log("catch all route: ",router.query.blogs);
+    // console.log("catch all route: ",router.query.blogs);
     return (
         <div>
             <h1>The Blog Page </h1>

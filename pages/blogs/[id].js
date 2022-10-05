@@ -6,7 +6,7 @@ const SingleBlog = () => {
   const [blogData, setBlogData] = useState();
   const router = useRouter();
   const blogId = router?.query?.id;
-  console.log(blogData);
+  // console.log(blogData);
 
   useEffect(() => {
     fetch(`https://jsonplaceholder.typicode.com/posts/${blogId}`)
